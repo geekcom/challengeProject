@@ -1,7 +1,7 @@
 # API Laravel + WebAPP Laravel + Docker
 
 ### About
-This is a generic REST WebApp + API for upload XML File and Auth user.
+This is a generic REST API + WebApp for upload XML File and Auth user.
 
 ---
 ## How to install?
@@ -35,6 +35,7 @@ This is a generic REST WebApp + API for upload XML File and Auth user.
     * **docker exec -it app php artisan key:generate**
 * Information of new containers
     * **docker ps -a**
+* Create a user for acess WebApp in the API
 
 #### Access WebApp
 
@@ -48,7 +49,7 @@ http://localhost:9000
 
 ---
 
-##API Docs
+## API Docs
 
 ### About
 This is a generic REST API for upload XML File and Auth user.
