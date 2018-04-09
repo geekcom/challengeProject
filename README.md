@@ -85,8 +85,6 @@ http://localhost:8000/api/v1/users
 
 **HEADERS**
 
-**Authorization Bearer + token generated in auth route**
-
 **BODY**
 
 **name**   exampleName
@@ -174,9 +172,3 @@ http://localhost:8000/api/v1/xml
 ```sh
 http://localhost:8000/api/v1/xml/{id}
 ```
-
-**HEADERS**
-
-**Authorization Bearer + token generated in auth route**
-
-
