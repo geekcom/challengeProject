@@ -46,6 +46,9 @@ http://localhost:9000
 
 * Use Postman and import 
     * **API.postman_collection.json**
+    
+#### TESTS API
+* **docker exec -it api vendor/bin/phpunit**
 
 ---
 
