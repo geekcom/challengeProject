@@ -18,6 +18,7 @@
                     @endif
                     <h3>Logged in, your API token is:</h3>
                         <p><b>{{ session('token') }}</b></p>
+                    <b><p>Your token is valid for 60 minutes</p></b>
                 </div>
             </div>
         </div>

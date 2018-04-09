@@ -19,7 +19,7 @@ class ProcessController extends BaseController implements ProcessContract
         try{
             $xml = simplexml_load_file($file);
         }catch (\Exception $exception){
-            session()->flash('message', 'error ' . $exception->getCode());
+            session()->flash('message', 'Invalid file');
             return redirect()->back();
         }
 

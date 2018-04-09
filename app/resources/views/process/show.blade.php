@@ -17,12 +17,11 @@
                     @endif
 
                     <form>
+                        <legend> UUID </legend>
+                        <input type="text" value="{{ $id }}" class="form-control" disabled>
+                        <hr>
                         @foreach($people as $person)
                             <div class="form-group">
-                                <legend> ID </legend>
-
-                                <input type="text" value="{{ $id }}" class="form-control" disabled>
-                                    <hr>
                                     <label>Person ID</label>
                                     <input type="text" value="{{ $person->personid }}" class="form-control" disabled>
                                     <label>Person Name</label>
@@ -38,6 +37,7 @@
                                             <option>{{ $phone }}</option>
                                         @endforeach
                                     </select>
+                                <hr>
                             </div>
                         @endforeach
                     </form>

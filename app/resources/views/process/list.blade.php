@@ -17,6 +17,7 @@
                     @endif
 
                     <div class="list-group">
+                        <label>XML Files by UUID</label>
                         @foreach($data as $item)
                             <a href="{{ $item->id }}" class="list-group-item list-group-item-action">{{ $item->id }}</a>
                         @endforeach
