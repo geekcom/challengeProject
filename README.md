@@ -35,7 +35,7 @@ This is a generic REST API + WebApp for upload XML File and Auth user.
     * **docker exec -it app php artisan key:generate**
 * Information of new containers
     * **docker ps -a**
-* Create a user for acess WebApp in the API
+* Create a user for access WebApp in the API
 
 #### Access WebApp
 
