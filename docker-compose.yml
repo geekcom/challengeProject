@@ -1,0 +1,43 @@
+# v2 syntax
+version: '2'
+services:
+
+  # DB
+  db:
+    image: ambientum/mysql:5.7
+    container_name: db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=api
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+
+  # API
+  api:
+    image: ambientum/php:7.2-nginx
+    container_name: api
+    volumes:
+      - ./api:/var/www/app
+    ports:
+      - "8000:8080"
+    depends_on:
+      - db
+    links:
+      - db
+    expose:
+      - "8000"
+
+  # APP
+  app:
+      image: ambientum/php:7.2-nginx
+      container_name: app
+      volumes:
+        - ./app:/var/www/app
+      ports:
+        - "9000:8080"
+      depends_on:
+        - api
+      links:
+        - api

@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "c6e88919-cfc9-4902-bb84-576935932d5b",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"description": null,
+			"item": [
+				{
+					"name": "{{URL}}/auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"mail@mail.com\",\n  \"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						},
+						"description": "Authentication"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"description": null,
+			"item": [
+				{
+					"name": "{{URL}}/users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2a17eafc-485f-41ee-a469-f4b405f5b4f1",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"User\",\n  \"email\":\"mail@mail.com\",\n  \"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}/users/{id}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9e577f11-099a-4c9d-b048-48b522d09932",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/users/8ec44411-9533-4239-986f-c62a0452b383",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"8ec44411-9533-4239-986f-c62a0452b383"
+							]
+						},
+						"description": "Show User data"
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}/users/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"Daniel\",\n  \"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/users/49502956-00b0-46a9-aa15-58bc6f9a3e86",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"49502956-00b0-46a9-aa15-58bc6f9a3e86"
+							]
+						},
+						"description": "Update a User's data"
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}/user/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/users/8ec44411-9533-4239-986f-c62a0452b383",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"8ec44411-9533-4239-986f-c62a0452b383"
+							]
+						},
+						"description": "Delete a User"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1ed5abdb-1182-49eb-a421-43db4e6b4868",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c22f2d51-d752-4c39-94ce-393497366fa5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "XML",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}/xml",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"xml\" : \"data\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/xml",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}/xml",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/xml",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}/xml/show/{id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/xml/6816b31d-7286-4e12-93bb-fe37bc4b0504",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"xml",
+								"6816b31d-7286-4e12-93bb-fe37bc4b0504"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "44a5626f-bf5e-4363-a960-e213ce95439f",
+				"type": "text/javascript",
+				"exec": [
+					"var envUrl = pm.environment.get('URL');",
+					"",
+					"const echoPostRequest = {",
+					"  ",
+					"  url: envUrl + '/auth',",
+					"  method: 'POST',",
+					"  header: {",
+					"        'content-type': 'application/json',",
+					"    },",
+					"  body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify({ email: 'mail@mail.com', password: '123456' })",
+					"    }",
+					"};",
+					"",
+					"pm.sendRequest(echoPostRequest, function (err, response) {",
+					"    var data = response.json();",
+					"    pm.environment.set(\"TOKEN\", data.data.token);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "36b2c140-6995-4349-866f-9556f0c05f3f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
