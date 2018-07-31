@@ -3,9 +3,17 @@
 namespace API\Repositories;
 
 use API\Repositories\Contracts\XmlRepositoryInterface;
+use API\Models\Xml;
 
-final class XmlRepository extends BaseRepository implements XmlRepositoryInterface
+final class XmlRepository implements XmlRepositoryInterface
 {
+    protected $xml;
+
+    public function __construct(Xml $xml)
+    {
+        $this->xml = $xml;
+    }
+
     public function store($request)
     {
         $data = $request->only('xml');

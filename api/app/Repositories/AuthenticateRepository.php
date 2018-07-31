@@ -2,11 +2,22 @@
 
 namespace API\Repositories;
 
+use API\Models\User;
 use API\Repositories\Contracts\AuthenticateRepositoryInterface;
 use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\JWTAuth;
 
-final class AuthenticateRepository extends BaseRepository implements AuthenticateRepositoryInterface
+final class AuthenticateRepository implements AuthenticateRepositoryInterface
 {
+    protected $JWTAuth;
+    protected $user;
+
+    public function __construct(JWTAuth $JWTAuth, User $user)
+    {
+        $this->JWTAuth = $JWTAuth;
+        $this->user = $user;
+    }
+
     public function authJWT($request)
     {
         $data = $request->only('email', 'password');

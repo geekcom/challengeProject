@@ -12,4 +12,6 @@ interface UserRepositoryInterface
 
     public function delete($id);
 
+    public function listAll();
+
 }

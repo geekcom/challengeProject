@@ -19,6 +19,7 @@ Route::post('v1/auth', 'AuthenticateController@authJwt');
 //Users
 Route::post('v1/users', 'UserController@store');
 Route::group(['prefix' => 'v1/users', 'middleware' => 'jwt.auth'], function () {
+    Route::get('/', 'UserController@listAll');
     Route::get('{id}', 'UserController@show')->where('id', '[a-z0-9\-]+');
     Route::put('{id}', 'UserController@update')->where('id', '[a-z0-9\-]+');
     Route::delete('{id}', 'UserController@delete')->where('id', '[a-z0-9\-]+');

@@ -2,21 +2,19 @@
 
 namespace API\Repositories;
 
+use API\Models\User;
 use API\Repositories\Contracts\UserRepositoryInterface;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
-final class UserRepository extends BaseRepository implements UserRepositoryInterface
+final class UserRepository implements UserRepositoryInterface
 {
-    public function show($id)
-    {
-        $user = $this->user->find($id);
+    protected $user;
 
-        if ($user) {
-            return response()->json(['status' => 'success', 'data' => ['user' => $user]], 200);
-        }
-        return response()->json(['status' => 'error', 'message' => 'no data'], 404);
+    public function __construct(User $user)
+    {
+        $this->user = $user;
     }
 
     public function store($request)
@@ -99,5 +97,25 @@ final class UserRepository extends BaseRepository implements UserRepositoryInter
             return response()->json(['status' => 'success', 'data' => null], 200);
         }
         return response()->json(['status' => 'error'], 404);
+    }
+
+    public function listAll()
+    {
+        $user = $this->user->all();
+
+        if ($user) {
+            return response()->json(['status' => 'success', 'data' => ['user' => $user]], 200);
+        }
+        return response()->json(['status' => 'error', 'message' => 'no data'], 404);
+    }
+
+    public function show($id)
+    {
+        $user = $this->user->find($id);
+
+        if ($user) {
+            return response()->json(['status' => 'success', 'data' => ['user' => $user]], 200);
+        }
+        return response()->json(['status' => 'error', 'message' => 'no data'], 404);
     }
 }

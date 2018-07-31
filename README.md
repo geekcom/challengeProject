@@ -7,7 +7,7 @@ This is a generic REST API + WebApp for upload XML File and Auth user.
 ## How to install?
 * Install git
 * Clone the repository
-* Download and install docker
+* Download and install docker and docker-compose
 
 ##### API
 * Uploading Application container  
@@ -35,7 +35,7 @@ This is a generic REST API + WebApp for upload XML File and Auth user.
     * **docker exec -it app php artisan key:generate**
 * Information of new containers
     * **docker ps -a**
-* Create a user for access WebApp in the API
+* Create a user for access WebApp in the API using Postman
 
 #### Access WebApp
 
